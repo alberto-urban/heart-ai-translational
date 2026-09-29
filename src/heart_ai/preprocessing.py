@@ -1,9 +1,13 @@
 from collections.abc import Sequence
+
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder,StandardScaler
-from .config import NUMERICAL,CATEGORICAL
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+from .config import CATEGORICAL, NUMERICAL
+
+
 def build_preprocessor(features:Sequence[str])->ColumnTransformer:
     s=set(features); num=[x for x in NUMERICAL if x in s]; cat=[x for x in CATEGORICAL if x in s]; steps=[]
     if num: steps.append(("numeric",Pipeline([("imputer",SimpleImputer(strategy="median")),("scaler",StandardScaler())]),num))

@@ -1,7 +1,10 @@
-from pathlib import Path
 import logging
+from pathlib import Path
+
 import pandas as pd
-from .config import ALL_FEATURES,TARGET
+
+from .config import ALL_FEATURES, TARGET
+
 logger=logging.getLogger(__name__)
 class DataValidationError(ValueError): pass
 def validate_dataset(df:pd.DataFrame)->None:

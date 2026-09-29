@@ -1,6 +1,9 @@
 import pytest
+
 from heart_ai.models import build_model
 from heart_ai.pipeline import train_and_evaluate
+
+
 @pytest.mark.parametrize("model",["logistic_regression","random_forest","svm"])
 def test_models_train(sample_dataframe,model):
     pipe,res=train_and_evaluate(sample_dataframe,model,["Age","Sex","RestingBP","Cholesterol","MaxHR","ExerciseAngina"],.3,42)

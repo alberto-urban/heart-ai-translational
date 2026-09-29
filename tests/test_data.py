@@ -1,6 +1,10 @@
 from pathlib import Path
+
 import pytest
-from heart_ai.data import DataValidationError,load_dataset,validate_dataset,validate_features
+
+from heart_ai.data import DataValidationError, load_dataset, validate_dataset, validate_features
+
+
 def test_valid(sample_dataframe): validate_dataset(sample_dataframe)
 def test_missing_column(sample_dataframe):
     with pytest.raises(DataValidationError): validate_dataset(sample_dataframe.drop(columns=["Age"]))

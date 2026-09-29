@@ -1,6 +1,6 @@
+import joblib
 import pandas as pd
 import pytest
-import joblib
 
 from heart_ai.config import ALL_FEATURES
 from heart_ai.pipeline import build_pipeline

@@ -9,7 +9,6 @@ from pydantic import BaseModel, Field
 from .config import ALL_FEATURES
 from .models import MODEL_NAMES
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MODELS_DIR = PROJECT_ROOT / "models"
 

@@ -1,13 +1,26 @@
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split, StratifiedKFold, cross_validate
 from sklearn.calibration import calibration_curve
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    brier_score_loss,
+    confusion_matrix,
+    f1_score,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+    roc_curve,
+)
+from sklearn.model_selection import StratifiedKFold, cross_validate, train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import accuracy_score,balanced_accuracy_score,precision_score,recall_score,f1_score,roc_auc_score,confusion_matrix,roc_curve, brier_score_loss
-from .config import TARGET,RANDOM_STATE,TEST_SIZE
-from .data import validate_dataset,validate_features
+
+from .config import RANDOM_STATE, TARGET, TEST_SIZE
+from .data import validate_dataset, validate_features
 from .models import build_model
+
 a=dataclass
 @dataclass(frozen=True)
 class AnalysisResult:

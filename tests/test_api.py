@@ -2,7 +2,6 @@ from fastapi.testclient import TestClient
 
 from heart_ai.api import app
 
-
 client = TestClient(app)
 
 
